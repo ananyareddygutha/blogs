@@ -1,0 +1,23 @@
+<%- include("../partials/header") %>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/new.css" />
+</head>
+<body>
+
+<%- include("../partials/nav") %>
+<h1 class="heading"><i class="fas fa-sign-in-alt fa-md"></i> Login</h1>
+<form class="newForm" action="/login" method="POST">
+    <div class="From-tag">
+        <label for="username">Name</label>
+        <input type="text" name="username" autocomplete="off" placeholder="Jhon Doe" required>
+    </div>
+    <div class="From-tag">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter password" required>
+        <button type="submit" class="new">Login</button>
+        <a class="new warning" href="/register">Register</a>
+    </div>
+    <input type="hidden" name="referer" value=<%= referer %>>
+</form>
+
+
+<%- include("../partials/footer")%>

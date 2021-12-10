@@ -1,0 +1,30 @@
+<nav >
+    <div class="nav-container">
+        <div id="Brand">
+            <a href="/blogs"><h3>RSblogs</h3></a>
+        </div>
+        <ul>
+            <% if(!currUser) {%>
+            <li><a href="/register" class="navlinks"><i class="fas fa-user-plus icon"></i>Sign Up</a></li>
+            <li class="log"><a href="/login" class="navlinks"><i class="fas fa-sign-in-alt icon"></i>Login</a></li>
+            <% } else { %>
+            <li><a href="/register" class="navlinks"><i class="fas fa-user icon"></i>Signed is as <%= currUser.username %></a></li>
+            <li class="log"><a href="/logout" class="navlinks"><i class="fas fa-sign-out-alt icon"></i>Logout</a></li>
+            <% } %>
+            <li class="contact"><a class="navlinks" href="https://www.linkedin.com/in/ananya-reddy-357675212/"><i class="fas fa-blender-phone"></i> Contact</a></li> 
+        </ul>
+    </div>
+
+    
+    <% if(error && error.length>0 ) { %>
+    <div class="alert alert-danger" role="alert" >
+        <%= error %><div class="cross"><i class="fas fa-times fa-xs"></i></div>
+    </div>
+    <% } %>
+
+    <% if(success && success.length>0 ) { %>
+    <div class="alert alert-success" role="alert" >
+            <%= success %><div class="cross"><i class="fas fa-times fa-xs"></i></div>
+    </div>
+    <% } %>
+</nav> 

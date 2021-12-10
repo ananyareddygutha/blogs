@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #131b21; /* fallback for old browsers */
+}
+@media (min-width: 540px) {
+  .blog {
+    margin: 0 auto;
+    margin-top: 20vh;
+    width: 50%;
+  }
+}
+@media (max-width: 540px) {
+  .blog {
+    margin: 0 auto;
+    margin-top: 20vh;
+    width: 90%;
+  }
+}
+.blog-title {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.5s;
+  margin-bottom: 2vh;
+  font-size: xx-large;
+  letter-spacing: 1px;
+  color: rgb(240, 240, 240);
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25);
+}
+.blog-content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s;
+  margin-bottom: 20vh;
+  padding: 5px;
+  background-color: rgb(230, 227, 227);
+  border: solid 1px rgb(175, 175, 175);
+  border-radius: 10px;
+  box-shadow: 0px 0px 13px -1px rgba(69, 69, 69, 0.25);
+}
+.blog-desc {
+  padding: 10px;
+}
+.description {
+  font-size: 1.1em;
+  line-height: 1.1em;
+}
+.blog-img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.tag-line {
+  padding-top: 10px;
+  color: #444444;
+  text-align: right;
+}
+.new {
+  outline: none;
+  transition: all 0.5s;
+  padding: 8px 16px;
+  margin-top: 20px;
+  margin-right: 5px;
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #24a0ed;
+  border-color: #169cf0;
+}
+.new:hover {
+  outline: none;
+  color: #fff;
+  background-color: #1890db;
+  border-color: #0e7cc0;
+}
+.warning {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.warning:hover {
+  outline: none;
+  color: #fff;
+  background-color: #eea032;
+  border-color: #e99622;
+}
+.danger {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.danger:hover {
+  outline: none;
+  color: #fff;
+  background-color: #d64a45;
+  border-color: #db302a;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+.slide-up {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.slide-right {
+  opacity: 1;
+  transform: translateX(0px);
+}

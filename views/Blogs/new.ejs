@@ -1,0 +1,29 @@
+<%- include("../partials/header") %>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/new.css" />
+</head>
+<body>
+    <%- include("../partials/nav") %>
+    <h1 class="heading"><i class="fas fa-plus fa-md"></i> Add New Post</h1>
+    <form class="newForm" action="/blogs" method="POST">
+
+        <div class="From-tag">
+            <label for="title">Title</label>
+            <input type="text" name="title" placeholder="ex. Find Yourself" autocomplete="off" required>
+        </div>
+
+        <div class="From-tag">
+            <label for="image">Image</label>
+            <input type="text" name="image" placeholder="paste image url" autocomplete="off" required>
+        </div>
+
+        <div class="From-tag">
+            <label for="description">Description</label>
+            <textarea name="description" rows="6" placeholder="Describe your topic (HTML Tags are accepted)" required></textarea>
+            <button type="submit" class="new">Post</button>
+        </div>
+        
+    </form>    
+
+
+
+<%- include("../partials/footer") %>

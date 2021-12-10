@@ -1,0 +1,60 @@
+<%- include("../partials/header") %>
+    <link rel="stylesheet" type="text/css" href="stylesheets/home.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/preloader.css" />
+</head>
+<body onload="wave()">
+    <div id="preloader">
+        <div id="loadText">Loading</div>
+        <div class="animation">
+            <div id="circle1" class="circle"></div>
+            <div id="circle2" class="circle"></div>
+            <div id="circle3" class="circle"></div>
+            <div id="circle4" class="circle"></div>
+            <div id="circle5" class="circle"></div>
+        </div>
+    </div>
+    
+    <header>
+        <%- include("../partials/nav") %>
+        <div class="overlay">
+            <div id="content">
+                <h1>Write To Inspire</h1>
+                <p><a href="./blogs/new" class="new"><i class="fas fa-plus fa-xs"></i> Add new post</a></p>
+            </div>
+        </div>
+    </header>
+    
+    <section class="post-section">
+        <h1 class="section-heading">Trending Posts</h1>
+        <div class="posts">
+            <% blogs.forEach(function(blog){ %>
+                <div class = "post">
+                        <div class ="post-image">
+                            <img class="img" src="<%= blog.image %>" alt="This is an image realted to the article">
+                        </div>
+                        <div class="post-details">
+                            <div class="title-div">
+                                <h3 class="post-title"><%= blog.title%></h3>
+                            </div>
+                            <div class="desc-div">
+                                <p class="post-desc"><%- blog.description.substring(0,300) %>.......</p>   
+                            </div>
+                            <div class="btn-div">
+                                <p id="time">Submitted by :- <%= blog.author.username %>, <%- moment(blog.createdAt).fromNow()%></p>
+                                <a class="btnone" href="/blogs/<%= blog._id %>">Read More</a>
+                            </div>
+                        </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+    <section class = "footer">
+        <h4 class="foot">&copy; all copy rights reserved,made with immense love by Ananya</h4>
+    </section>
+
+
+    <script type="text/javascript" src="JS/home.js"></script>
+<%- include("../partials/footer") %>
+
+<!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat aperiam nam non molestias eveniet, illum maxime voluptatibus consectetur neque placeat soluta adipisci, harum fugit nobis, ipsum minima recusandae. Quod culpa ad molestias temporibus ipsam, tempore dolorum. Dolorum sapiente libero soluta, voluptatum assumenda est fuga aliquam ullam eligendi ipsum doloremque reiciendis explicabo molestias, similique ex asperiores autem nostrum ab. Consequatur, quisquam id. Nisi id, cum inventore veritatis quod, non iure illo, adipisci voluptatum ex consequuntur. Dolorem vero repellendus tempore reprehenderit accusantium laudantium deserunt a in! Quod maiores repellat sunt ex quisquam repellendus fugit autem laboriosam perspiciatis similique, explicabo nemo possimus doloremque. -->

@@ -1,0 +1,26 @@
+<%- include("../partials/header")%>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/show.css">
+</head>
+<body>
+    <%- include("../partials/nav") %>
+    <div class="blog">
+        <h1 class="blog-title"><%= post.title %></h1>
+
+        <section class="blog-content">
+            <img class="blog-img" src="<%= post.image %>" alt="post related image" width="400px" height="auto">
+            <div class="blog-desc">
+                <p class="description">
+                    <%- post.description %>
+                </p>
+                <p class="tag-line"><em>Submitted by - <%= post.author.username %>, <%- moment(post.createdAt).fromNow() %><em></p>
+                <% if(currUser && currUser._id.equals(post.author.id)){ %>
+                <a class="new warning" href="/blogs/<%= post._id %>/edit" ><i class="far fa-edit"></i> Edit</a>
+                <form action="/blogs/<%= post._id %>/?_method=DELETE" method="POST" style="display: inline-block;">
+                    <button type="submit" class="new danger" ><i class="far fa-trash-alt"></i> Delete</button>
+                </form>
+                <% } %>
+            </div>
+        </section>
+    </div>
+    <script type="text/javascript" src="/JS/show.js"></script>
+<%- include("../partials/footer")%>
